@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>REMS Directory</title>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<style>
+		.mainbody{ width:600px}
+		.Layout10_1{ width:250px; text-align:center; height:300px; float:left;}						
+		.Layout10_2{ width:300px; float:left; height:300px; }						
+		.Layout10_header{ width:100%; height:40px; width:600px}
+		
+		/*body, html {background:#444; text-align:left; padding:50px 0;}
+		
+		/* The CSS */
+		body {
+		  background-color: #ccc;
+		  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+		  background-size: 50px 50px;
+		}
+		
+		form {
+			float:right;
+		}
+		
+		select {
+			padding:3px;
+			margin: 0;
+			-webkit-border-radius:4px;
+			-moz-border-radius:4px;
+			border-radius:4px;
+			-webkit-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			-moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+			background: #f8f8f8;
+			color:#888;
+			border:none;
+			outline:none;
+			display: inline-block;
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			appearance:none;
+			cursor:pointer;
+			vertical-align: bottom;
+		}
+
+		/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+		@media screen and (-webkit-min-device-pixel-ratio:0) {
+			select {padding-right:18px}
+		}
+	</style>
+	<script>
+		$(function() {
+		
+			$("#json-one").change(function() {
+			
+				var $dropdown = $(this);
+			
+				$.getJSON("jsondata/data.json", function(data) {
+				
+					var key = $dropdown.val();
+					var vals = data[key].split(",");
+					
+					var $jsontwo = $("#json-two");
+					$jsontwo.empty();
+					
+					switch(key){
+						case "certs":
+							$jsontwo.append("<option>" + "Select Certification" + "</option>");
+							break;
+						case "duties":
+							$jsontwo.append("<option>" + "Select Duty" + "</option>");
+							break;
+						case "colleges":
+							$jsontwo.append("<option>" + "Select College" + "</option>");
+							break;
+						default:
+							$jsontwo.append("<option>" + "Select Subcategory" + "</option>");
+							break;						
+					}
+					
+					$.each(vals, function(index, value) {
+						$jsontwo.append("<option>" + value + "</option>");
+					});
+					
+					var $jsonthree = $("#json-three");
+					$jsonthree.empty();
+			
+				});
+			});
+			
+			$("#json-two").change(function(){
+				var $dropdown = $(this);
+			
+				$.getJSON("jsondata/keydex.json", function(data) {
+					var key = $dropdown.val();
+					var vals = data[key].split("_");
+					
+					
+					var $jsonthree = $("#json-three");
+					$jsonthree.empty();
+					$jsonthree.append("<option>" + "Select Member" + "</option>");
+					$.each(vals, function(index, value) {
+						$jsonthree.append("<option>" + value + "</option>");
+					});
+			
+				});
+			});
+			
+			$("#json-three").change(function(){
+				var $dropdown = $(this);
+			
+				$.getJSON("jsondata/pics.json", function(data) {
+					var key = $dropdown.val();
+					var vals = data[key];
+					var img = document.getElementById('myImage'); 
+					img.src = vals;
+				});
+				
+				$.getJSON("jsondata/descriptions.json", function(data2) {
+					var key2 = $dropdown.val();
+					var vals2 = data2[key2].replace("^","\n");
+					while(vals2.indexOf("^") > -1){
+						vals2 = vals2.replace("^","\n");
+					}
+					document.getElementById("demo").innerHTML = vals2;
+				});
+			});
+		//		confirm($(this).val());
+		//		
+		//	});
+		});
+	</script>
+</head>
+
+<body>
+
+	
+
+	<div id="page-wrap">
+	
+		<div class=Layout10_header>
+			<select id="json-one">
+				<option selected value="base">Select Category</option>
+				<option value="general">General</option>
+				<option value="colleges">Colleges</option>
+				<option value="certs">Certifications</option>
+				<option value="duties">Duties</option>
+			</select>
+		
+			<select id="json-two">
+			</select>
+			<select id="json-three">
+			</select>
+			
+			<form id="switcher" action="flow.html">
+				<input type="submit" value="Gallery View">
+			</form>
+		</div>
+		<div class=Layout10_1 >
+			<p id="demo"><br><br><br><br>Select a REMS member using the<br>dropdown menus above</p>
+		</div>
+		<div  class=Layout10_2 >
+			<img id="myImage" src="pictures/REMS.png" width="300" height="300"/>
+		</div>
+	
+	</div>
+	
+	
+	
+</body>
+
+
+</html>

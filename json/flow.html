@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.jcoverflip.com/files/docs/jcoverflip-demo/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>REMS Directory Slider</title>
+    
+    <link rel="stylesheet" href="./flow/jquery-ui-1.7.2.custom.css" type="text/css" media="all">
+    <style>
+	
+	  .ui-jcoverflip {
+        position: relative;
+      }
+      
+      .ui-jcoverflip--item {
+        position: absolute;
+        display: block;
+      }
+	  
+	  form {
+			float:right;
+		position: absolute;
+        top: 8px;
+		left: 500px;
+      }
+      
+      /* Basic sample CSS */
+      #flip {
+        height: 200px;
+        width: 630px;
+        margin-bottom: 50px;
+      }
+      
+      #flip .ui-jcoverflip--title {
+        position: absolute;
+        top: 210px;
+        width: 100%;
+        text-align: center;
+        color: #555;
+      }
+      
+      #flip img {
+        display: block;
+        border: 0;
+        outline: none;
+      }
+      
+      #flip a {
+        outline: none;
+      }
+      
+      
+      #wrapper {
+        height: 400px;
+        width: 630px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .ui-jcoverflip--item {
+        cursor: pointer;
+      }
+      
+      
+      
+      body {
+        font-family: Arial, sans-serif;
+        width: 630px;
+        padding: 0;
+        margin: 0;
+		background-color: #ccc;
+		background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+		background-size: 50px 50px;
+      }
+      
+      ul,
+      ul li {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style-type: none;
+      }
+      
+      #scrollbar {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        
+      }
+      
+
+    </style>
+    
+    <script type="text/javascript" src="./flow/jquery-1.3.2.js"></script>
+    <script type="text/javascript" src="./flow/jquery-ui-1.7.2.custom.js"></script>
+    <script type="text/javascript" src="./flow/jquery.jcoverflip.js"></scrip>
+    <script>
+    
+    </script>
+    
+    <script>
+    jQuery( document ).ready( function(){
+        jQuery( '#flip' ).jcoverflip({
+          current: 2,
+          beforeCss: function( el, container, offset ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 210 - 110*offset + 20*offset )+'px', bottom: '20px' }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+            ];
+          },
+          afterCss: function( el, container, offset ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 + 110 + 110*offset )+'px', bottom: '20px' }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: Math.max(10,100-20*offset*offset) + 'px' }, {} )
+            ];
+          },
+          currentCss: function( el, container ){
+            return [
+              $.jcoverflip.animationElement( el, { left: ( container.width( )/2 - 100 )+'px', bottom: 0 }, { } ),
+              $.jcoverflip.animationElement( el.find( 'img' ), { width: '200px' }, { } )
+            ];
+          },
+          change: function(event, ui){
+            jQuery('#scrollbar').slider('value', ui.to*25);
+          }
+        });
+        
+        
+        jQuery('#scrollbar').slider({
+          value: 100,
+          stop: function(event, ui) {
+            if(event.originalEvent) {
+              var newVal = Math.round(ui.value/25);
+              jQuery( '#flip' ).jcoverflip( 'current', newVal );
+              jQuery('#scrollbar').slider('value', newVal*25);
+            }
+          }
+        });
+      });
+      
+      
+    </script>
+        
+  <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script><style type="text/css"></style></head>
+  <body>
+    <div id="wrapper">
+    <ul id="flip" class="ui-jcoverflip">
+
+		<li title="Adrianna Lee<br>Scheduling Coordinator<br>Brown '17<br>remsscheduler@gmail.com<br>(240)751-2350<br>" class="ui-jcoverflip--item" style="left:215px; bottom: 20px;">
+		<img src="pictures/lee.adrianna.png" style="width: 200px; display: block;"></li>
+
+		<li title="Nitin Agrawal<br>EMT-Basic<br>Duty Crew<br>Field Training Assistant<br>Special Events EMT<br>BLS Instructor<br>Baker '16<br>na22@rice.edu<br>(904)664-4111<br>" class="ui-jcoverflip--item" style="left:425px; bottom: 20px;">
+		<img src="pictures/agrawal.nitin.png" style="width: 100px; display: block;"></li>
+
+		<li title="Mollie Ahn<br>EMT-Intermediate<br>InCharge<br>Education Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Brown '15<br>mollie.ahn@rice.edu<br>(832)367-8434<br>" class="ui-jcoverflip--item" style="left:535px; bottom: 20px;">
+		<img src="pictures/ahn.mollie.png" style="width: 80px; display: block;"></li>
+
+		<li title="Gregory Aird<br>EMT-Basic<br>Lovett '15<br>gaa1@rice.edu<br>(949)243-4689<br>" class="ui-jcoverflip--item" style="left:645px; bottom: 20px;">
+		<img src="pictures/aird.gregory.png" style="width: 20px; display: block;"></li>
+
+		<li title="Ibrahim Akbar<br>EMT-Intermediate<br>InCharge Trainee<br>Commander<br>Special Events EMT<br>BLS Instructor<br>Brown '16<br>mia3@rice.edu<br>(281)216-0924<br>" class="ui-jcoverflip--item" style="left:755px; bottom: 20px;">
+		<img src="pictures/akbar.ibrahim.png" style="width: 10px; display: block;"></li>
+
+		<li title="Nathan Allen<br>MD<br>Medical Command<br>Jones '03<br>nallen@bcm.edu<br>" class="ui-jcoverflip--item" style="left:865px; bottom: 20px;">
+		<img src="pictures/allen.nathan.png" style="width: 10px; display: block;"></li>
+
+		<li title="Nicholas Anhold<br>EMT-Intermediate<br>Duty Crew<br>Special Events EMT<br>BLS Instructor<br>Baker '15<br>nga1@rice.edu<br>(440)539-5387<br>" class="ui-jcoverflip--item" style="left:975px; bottom: 20px;">
+		<img src="pictures/anhold.nicholas.png" style="width: 10px; display: block;"></li>
+
+		<li title="Michael Armstrong<br>EMT-Basic<br>Lovett '16<br>maa11@rice.edu<br>(512)450-4136<br>" class="ui-jcoverflip--item" style="left:1085px; bottom: 20px;">
+		<img src="pictures/armstrong.michael.png" style="width: 10px; display: block;"></li>
+
+		<li title="Lisa Basgall<br>Licensed Paramedic<br>EMS Director<br>lisa.m.basgall@rice.edu<br>(713)412-2864<br>" class="ui-jcoverflip--item" style="left:1195px; bottom: 20px;">
+		<img src="pictures/basgall.lisa.png" style="width: 10px; display: block;"></li>
+
+		<li title="Zaid Bilgrami<br>EMT-Basic<br>Duty Crew<br>Baker '16<br>zbh2@rice.edu<br>(301)828-5518<br>" class="ui-jcoverflip--item" style="left:1305px; bottom: 20px;">
+		<img src="pictures/bilgrami.zaid.png" style="width: 10px; display: block;"></li>
+
+		<li title="Elzia Broussard<br>EMT-Basic<br>Duty Crew<br>Jones '15<br>erb7@rice.edu<br>(337)342-8249<br>" class="ui-jcoverflip--item" style="left:1415px; bottom: 20px;">
+		<img src="pictures/broussard.elzia.png" style="width: 10px; display: block;"></li>
+
+		<li title="Alexandra Bulga<br>EMT-Basic<br>Duty Crew<br>Hanszen '16<br>ab42@rice.edu<br>(972)375-3220<br>" class="ui-jcoverflip--item" style="left:1525px; bottom: 20px;">
+		<img src="pictures/bulga.alexandra.png" style="width: 10px; display: block;"></li>
+
+		<li title="Carlos Carames<br>EMT-Basic<br>Duty Crew<br>Brown '15<br>carlos.carames@rice.edu<br>(956)534-3894<br>" class="ui-jcoverflip--item" style="left:1635px; bottom: 20px;">
+		<img src="pictures/carames.carlos.png" style="width: 10px; display: block;"></li>
+
+		<li title="Ko Choi<br>EMT-Basic<br>Observer<br>Jones '14<br>ko.e.choi@rice.edu<br>(251)487-6101<br>" class="ui-jcoverflip--item" style="left:1745px; bottom: 20px;">
+		<img src="pictures/choi.ko.png" style="width: 10px; display: block;"></li>
+
+		<li title="Cameron Decker<br>Licensed Paramedic<br>Medical Command<br>Reserve Lieutenant<br>Special Events EMT<br>Martel<br>camerondecker@gmail.com<br>(713)927-5114<br>" class="ui-jcoverflip--item" style="left:1855px; bottom: 20px;">
+		<img src="pictures/decker.cameron.png" style="width: 10px; display: block;"></li>
+
+		<li title="William Dillon<br>EMT-Basic<br>Duty Crew<br>Notre Dame<br>Complimentary Staff<br>wdillon@nd.edu<br>(281)923-7632<br>" class="ui-jcoverflip--item" style="left:1965px; bottom: 20px;">
+		<img src="pictures/dillon.william.png" style="width: 10px; display: block;"></li>
+
+		<li title="Jennifer Ding<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Baker '15<br>jd18@rice.edu<br>(214)335-7064<br>" class="ui-jcoverflip--item" style="left:2075px; bottom: 20px;">
+		<img src="pictures/ding.jennifer.png" style="width: 10px; display: block;"></li>
+
+		<li title="Danny Dos Santos<br>EMT-Basic<br>ACLS Instructor<br>Special Events EMT<br>Martel '12<br>danny.dossantos89@gmail.com<br>(954)254-2110<br>" class="ui-jcoverflip--item" style="left:2185px; bottom: 20px;">
+		<img src="pictures/dos santos.danny.png" style="width: 10px; display: block;"></li>
+
+		<li title="Andrew Emerald<br>EMT-Intermediate<br>Reserve Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Lovett '12<br>emerald@rice.edu<br>(210)872-3739<br>" class="ui-jcoverflip--item" style="left:2295px; bottom: 20px;">
+		<img src="pictures/emerald.andrew.png" style="width: 10px; display: block;"></li>
+
+		<li title="Mark Escott<br>MD<br>Medical Command<br>Founder<br>Jones '96<br>fireman@rice.edu<br>" class="ui-jcoverflip--item" style="left:2405px; bottom: 20px;">
+		<img src="pictures/escott.mark.png" style="width: 10px; display: block;"></li>
+
+		<li title="Ian Feldman<br>Licensed Paramedic<br>Special Events EMT<br>BLS Instructor<br>Sid Rich<br>ifeldman@rice.edu<br>(773)960-9431<br>" class="ui-jcoverflip--item" style="left:2515px; bottom: 20px;">
+		<img src="pictures/feldman.ian.png" style="width: 10px; display: block;"></li>
+
+		<li title="Angela Siler Fisher<br>MD<br>Medical Command<br>afishermd@gmail.com<br>" class="ui-jcoverflip--item" style="left:2625px; bottom: 20px;">
+		<img src="pictures/fisher.angela siler.png" style="width: 10px; display: block;"></li>
+
+		<li title="Madeline Flores<br>EMT-Basic<br>Duty Crew<br>Lovett '16<br>mef4@rice.edu<br>(210)249-8151<br>" class="ui-jcoverflip--item" style="left:2735px; bottom: 20px;">
+		<img src="pictures/flores.madeline.png" style="width: 10px; display: block;"></li>
+
+		<li title="Louis Fornage<br>EMT-Intermediate<br>ACLS Instructor<br>Special Events EMT<br>BLS Instructor<br>Brown '12<br>lbf1@rice.edu<br>(713)203-4902<br>" class="ui-jcoverflip--item" style="left:2845px; bottom: 20px;">
+		<img src="pictures/fornage.louis.png" style="width: 10px; display: block;"></li>
+
+		<li title="Nicholas George-Jones<br>EMT-Basic<br>Duty Crew<br>Duncan '14<br>nag3@rice.edu<br>(713)269-8571<br>" class="ui-jcoverflip--item" style="left:2955px; bottom: 20px;">
+		<img src="pictures/george-jones.nicholas.png" style="width: 10px; display: block;"></li>
+
+		<li title="Lauren Gernon<br>EMT-Basic<br>Duty Crew<br>Martel '15<br>lgg1@rice.edu<br>(785)213-6563<br>" class="ui-jcoverflip--item" style="left:3065px; bottom: 20px;">
+		<img src="pictures/gernon.lauren.png" style="width: 10px; display: block;"></li>
+
+		<li title="Michael Gonzalez<br>MD<br>Medical Command<br>Sid Rich '93<br>doctormgg@gmail.com<br>" class="ui-jcoverflip--item" style="left:3175px; bottom: 20px;">
+		<img src="pictures/gonzalez.michael.png" style="width: 10px; display: block;"></li>
+
+		<li title="Nadia Haj-Ismail<br>EMT-Intermediate<br>Special Events EMT<br>BLS Instructor<br>McMurtry '13<br>nadia.ismail13@gmail.com<br>(281)475-6777<br>" class="ui-jcoverflip--item" style="left:3285px; bottom: 20px;">
+		<img src="pictures/haj-ismail.nadia.png" style="width: 10px; display: block;"></li>
+
+		<li title="Kayla Hatchell<br>EMT-Basic<br>Duty Crew<br>Lovett '15<br>keh3@rice.edu<br>(509)438-2311<br>" class="ui-jcoverflip--item" style="left:3395px; bottom: 20px;">
+		<img src="pictures/hatchell.kayla.png" style="width: 10px; display: block;"></li>
+
+		<li title="Trent Herrod<br>Licensed Paramedic<br>EMS Instructor<br>Special Events EMT<br>therrod@sugarlandtx.gov<br>(832)731-5793<br>" class="ui-jcoverflip--item" style="left:3505px; bottom: 20px;">
+		<img src="pictures/herrod.trent.png" style="width: 10px; display: block;"></li>
+
+		<li title="Alex Hilser<br>EMT-Basic<br>Duty Crew<br>Special Events EMT<br>McMurtry '14<br>agh5@rice.edu<br>(914)384-6416<br>" class="ui-jcoverflip--item" style="left:3615px; bottom: 20px;">
+		<img src="pictures/hilser.alex.png" style="width: 10px; display: block;"></li>
+
+		<li title="Benjamin Huang<br>EMT-Basic<br>InCharge Trainee<br>BLS Instructor<br>Brown '16<br>chang-wei.huang@rice.edu<br>(713)296-0175<br>" class="ui-jcoverflip--item" style="left:3725px; bottom: 20px;">
+		<img src="pictures/huang.benjamin.png" style="width: 10px; display: block;"></li>
+
+		<li title="Mariam Hussain<br>EMT-Basic<br>Duty Crew<br>Brown '16<br>mh36@rice.edu<br>(713)586-9834<br>" class="ui-jcoverflip--item" style="left:3835px; bottom: 20px;">
+		<img src="pictures/hussain.mariam.png" style="width: 10px; display: block;"></li>
+
+		<li title="Alan Hwang<br>EMT-Basic<br>Duty Crew<br>Brown '16<br>aoh1@rice.edu<br>(408)642-8599<br>" class="ui-jcoverflip--item" style="left:3945px; bottom: 20px;">
+		<img src="pictures/hwang.alan.png" style="width: 10px; display: block;"></li>
+
+		<li title="Matthew Janousek<br>Licensed Paramedic<br>Preceptor<br>Special Events EMT<br>mattjanousek@yahoo.com<br>(940)867-9670<br>" class="ui-jcoverflip--item" style="left:4055px; bottom: 20px;">
+		<img src="pictures/janousek.matthew.png" style="width: 10px; display: block;"></li>
+
+		<li title="Shane Jenks<br>MD<br>Medical Command<br>shanejenks@gmail.com<br>" class="ui-jcoverflip--item" style="left:4165px; bottom: 20px;">
+		<img src="pictures/jenks.shane.png" style="width: 10px; display: block;"></li>
+
+		<li title="Sirus Jesudasen<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Baker '15<br>sjj2@rice.edu<br>(281)691-0517<br>" class="ui-jcoverflip--item" style="left:4275px; bottom: 20px;">
+		<img src="pictures/jesudasen.sirus.png" style="width: 10px; display: block;"></li>
+
+		<li title="Ashley Joseph<br>EMT-Basic<br>Duty Crew<br>Jones '15<br>aj24@rice.edu<br>(813)716-1705<br>" class="ui-jcoverflip--item" style="left:4385px; bottom: 20px;">
+		<img src="pictures/joseph.ashley.png" style="width: 10px; display: block;"></li>
+
+		<li title="Iman Kassir<br>EMT-Basic<br>InCharge Trainee<br>Special Events EMT<br>BLS Instructor<br>Jones '15<br>iman.r.kassir@rice.edu<br>(713)367-6486<br>" class="ui-jcoverflip--item" style="left:4495px; bottom: 20px;">
+		<img src="pictures/kassir.iman.png" style="width: 10px; display: block;"></li>
+
+		<li title="Colette Kendrick<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Martel '15<br>chk3@rice.edu<br>(303)898-2559<br>" class="ui-jcoverflip--item" style="left:4605px; bottom: 20px;">
+		<img src="pictures/kendrick.colette.png" style="width: 10px; display: block;"></li>
+
+		<li title="Radina Khalid<br>EMT-Basic<br>Duty Crew<br>Special Events EMT<br>Baker '16<br>rk30@rice.edu<br>(832)848-0623<br>" class="ui-jcoverflip--item" style="left:4715px; bottom: 20px;">
+		<img src="pictures/khalid.radina.png" style="width: 10px; display: block;"></li>
+
+		<li title="Wilhelm Kienast<br>EMT-Intermediate<br>Special Events EMT<br>Wiess<br>wakienast1@gmail.com<br>(713)449-4431<br>" class="ui-jcoverflip--item" style="left:4825px; bottom: 20px;">
+		<img src="pictures/kienast.wilhelm.png" style="width: 10px; display: block;"></li>
+
+		<li title="Vinay Kotamarti<br>EMT-Basic<br>Duty Crew<br>Will Rice '15<br>vsk1@rice.edu<br>(214)603-2837<br>" class="ui-jcoverflip--item" style="left:4935px; bottom: 20px;">
+		<img src="pictures/kotamarti.vinay.png" style="width: 10px; display: block;"></li>
+
+		<li title="Christopher Leba<br>EMT-Paramedic<br>Reserve Lieutenant<br>EMS Instructor<br>Special Events EMT<br>BLS Instructor<br>Hanszen '13<br>ctl2@rice.edu<br>(281)795-0283<br>" class="ui-jcoverflip--item" style="left:5045px; bottom: 20px;">
+		<img src="pictures/leba.christopher.png" style="width: 10px; display: block;"></li>
+
+		<li title="Will Letchinger<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Sid Rich '17<br>wbl1@rice.edu<br>(202)306-3937<br>" class="ui-jcoverflip--item" style="left:5155px; bottom: 20px;">
+		<img src="pictures/letchinger.will.png" style="width: 10px; display: block;"></li>
+
+		<li title="Emily Liljestrand<br>EMT-Intermediate<br>Special Events EMT<br>Hanszen '13<br>eliljestrand@gmail.com<br>(512)699-4595<br>" class="ui-jcoverflip--item" style="left:5265px; bottom: 20px;">
+		<img src="pictures/liljestrand.emily.png" style="width: 10px; display: block;"></li>
+
+		<li title="Rafael Lima<br>EMT-Basic<br>Duty Crew<br>Special Events EMT<br>Sid Rich '15<br>ral5@rice.edu<br>(817)729-2352<br>" class="ui-jcoverflip--item" style="left:5375px; bottom: 20px;">
+		<img src="pictures/lima.rafael.png" style="width: 10px; display: block;"></li>
+
+		<li title="Teresa Lin<br>EMT-Intermediate<br>InCharge<br>Special Events Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Brown '14<br>tl10@rice.edu<br>(425)281-4942<br>" class="ui-jcoverflip--item" style="left:5485px; bottom: 20px;">
+		<img src="pictures/lin.teresa.png" style="width: 10px; display: block;"></li>
+
+		<li title="Carissa Livingston<br>EMT-Basic<br>Duty Crew<br>BLS Class Coordinator<br>BLS Instructor<br>Duncan '15<br>cel2@rice.edu<br>(610)937-9988<br>" class="ui-jcoverflip--item" style="left:5595px; bottom: 20px;">
+		<img src="pictures/livingston.carissa.png" style="width: 10px; display: block;"></li>
+
+		<li title="Melissa Martinez<br>EMT-Basic<br>Baker '15<br>mcm4@rice.edu<br>(469)658-1455<br>" class="ui-jcoverflip--item" style="left:5705px; bottom: 20px;">
+		<img src="pictures/martinez.melissa.png" style="width: 10px; display: block;"></li>
+
+		<li title="Oscar Martinez<br>Licensed Paramedic<br>Preceptor<br>Special Events EMT<br>oscarjose205@gmail.com<br>(715)579-2906<br>" class="ui-jcoverflip--item" style="left:5815px; bottom: 20px;">
+		<img src="pictures/martinez.oscar.png" style="width: 10px; display: block;"></li>
+
+		<li title="Marina Masciale<br>EMT-Intermediate<br>Special Events EMT<br>BLS Instructor<br>Hanszen '12<br>marinamasciale@gmail.com<br>(361)443-9002<br>" class="ui-jcoverflip--item" style="left:5925px; bottom: 20px;">
+		<img src="pictures/masciale.marina.png" style="width: 10px; display: block;"></li>
+
+		<li title="Patrick McCarthy<br>EMT-Intermediate<br>InCharge<br>Captain<br>Special Events EMT<br>BLS Instructor<br>Baker '14<br>pmm1@rice.edu<br>(240)285-0930<br>" class="ui-jcoverflip--item" style="left:6035px; bottom: 20px;">
+		<img src="pictures/mccarthy.patrick.png" style="width: 10px; display: block;"></li>
+
+		<li title="Faroukh Mehkri<br>EMT-Intermediate<br>Reserve Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Martel '12<br>faroukhm@gmail.com<br>(414)688-7764<br>" class="ui-jcoverflip--item" style="left:6145px; bottom: 20px;">
+		<img src="pictures/mehkri.faroukh.png" style="width: 10px; display: block;"></li>
+
+		<li title="Aydan Mehralizade<br>EMT-Basic<br>Duty Crew<br>Brown '14<br>am51@rice.edu<br>(832)576-3164<br>" class="ui-jcoverflip--item" style="left:6255px; bottom: 20px;">
+		<img src="pictures/mehralizade.aydan.png" style="width: 10px; display: block;"></li>
+
+		<li title="Mackenzie Netlow<br>EMT-Basic<br>McMurtry '16<br>mln2@rice.edu<br>(863)289-0080<br>" class="ui-jcoverflip--item" style="left:6365px; bottom: 20px;">
+		<img src="pictures/netlow.mackenzie.png" style="width: 10px; display: block;"></li>
+
+		<li title="Amir Nikahd<br>EMT-Intermediate<br>Reserve Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Sid Rich '12<br>an6@rice.edu<br>(832)466-7143<br>" class="ui-jcoverflip--item" style="left:6475px; bottom: 20px;">
+		<img src="pictures/nikahd.amir.png" style="width: 10px; display: block;"></li>
+
+		<li title="Sahar Noorani<br>EMT-Basic<br>Duty Crew<br>Brown '16<br>ssn2@rice.edu<br>(832)506-2042<br>" class="ui-jcoverflip--item" style="left:6585px; bottom: 20px;">
+		<img src="pictures/noorani.sahar.png" style="width: 10px; display: block;"></li>
+
+		<li title="Ndidi Okeke<br>EMT-Basic<br>Special Events EMT<br>BLS Instructor<br>Jones '13<br>nco1@rice.edu<br>(281)636-8676<br>" class="ui-jcoverflip--item" style="left:6695px; bottom: 20px;">
+		<img src="pictures/okeke.ndidi.png" style="width: 10px; display: block;"></li>
+
+		<li title="Brittney Olivarez<br>EMT-Basic<br>Observer<br>Brown '16<br>bao1@rice.edu<br>(832)904-5565<br>" class="ui-jcoverflip--item" style="left:6805px; bottom: 20px;">
+		<img src="pictures/olivarez.brittney.png" style="width: 10px; display: block;"></li>
+
+		<li title="Michael Pandya<br>Licensed Paramedic<br>Special Events EMT<br>Sid Rich<br>michael.panyda@gmail.com<br>(806)438-2160<br>" class="ui-jcoverflip--item" style="left:6915px; bottom: 20px;">
+		<img src="pictures/pandya.michael.png" style="width: 10px; display: block;"></li>
+
+		<li title="Ryan Pappal<br>EMT-Basic<br>InCharge Trainee<br>BLS Instructor<br>Duncan '17<br>pappal.ryan@rice.edu<br>(210)913-2747<br>" class="ui-jcoverflip--item" style="left:7025px; bottom: 20px;">
+		<img src="pictures/pappal.ryan.png" style="width: 10px; display: block;"></li>
+
+		<li title="Jesse Passman<br>EMT-Intermediate<br>InCharge<br>Senior Lieutenant<br>Special Events EMT<br>BLS Instructor<br>Baker '14<br>jep3@rice.edu<br>(301)471-6290<br>" class="ui-jcoverflip--item" style="left:7135px; bottom: 20px;">
+		<img src="pictures/passman.jesse.png" style="width: 10px; display: block;"></li>
+
+		<li title="Sajani Patel<br>EMT-Basic<br>Duty Crew<br>Will Rice '15<br>shp2@rice.edu<br>(713)409-9304<br>" class="ui-jcoverflip--item" style="left:7245px; bottom: 20px;">
+		<img src="pictures/patel.sajani.png" style="width: 10px; display: block;"></li>
+
+		<li title="Warren Phillips<br>Licensed Paramedic<br>EMS Instructor<br>Special Events EMT<br>warren.r.phillips4@gmail.com<br>(214)212-9621<br>" class="ui-jcoverflip--item" style="left:7355px; bottom: 20px;">
+		<img src="pictures/phillips.warren.png" style="width: 10px; display: block;"></li>
+
+		<li title="Tyson Pillow<br>MD<br>Medical Command<br>Will Rice '02<br>tysonpillow@gmail.com<br>" class="ui-jcoverflip--item" style="left:7465px; bottom: 20px;">
+		<img src="pictures/pillow.tyson.png" style="width: 10px; display: block;"></li>
+
+		<li title="Kuo (Ronnie) Ren<br>EMT-Intermediate<br>ACLS Instructor<br>Special Events EMT<br>BLS Instructor<br>Will Rice '12<br>kr3@rice.edu<br>(281)948-5162<br>" class="ui-jcoverflip--item" style="left:7575px; bottom: 20px;">
+		<img src="pictures/ren.kuo (ronnie).png" style="width: 10px; display: block;"></li>
+
+		<li title="Quinn Rhodes<br>EMT-Basic<br>Duty Crew<br>Martel '16<br>qar1@rice.edu<br>(404)375-3083<br>" class="ui-jcoverflip--item" style="left:7685px; bottom: 20px;">
+		<img src="pictures/rhodes.quinn.png" style="width: 10px; display: block;"></li>
+
+		<li title="Lindsey Schwartz<br>EMT-Basic<br>Brown '16<br>lms10@rice.edu<br>(214)803-5427<br>" class="ui-jcoverflip--item" style="left:7795px; bottom: 20px;">
+		<img src="pictures/schwartz.lindsey.png" style="width: 10px; display: block;"></li>
+
+		<li title="Muhammad Shamim<br>EMT-Intermediate<br>InCharge<br>CPR Lieutenant<br>Field Training Officer<br>Webmaster<br>BLS AHA Faculty<br>Special Events EMT<br>BLS Instructor<br>Baker '14<br>shamim@rice.edu<br>(956)376-6347<br>" class="ui-jcoverflip--item" style="left:7905px; bottom: 20px;">
+		<img src="pictures/shamim.muhammad.png" style="width: 10px; display: block;"></li>
+
+		<li title="Jessica Sheu<br>EMT-Basic<br>Duty Crew<br>Special Events EMT<br>BLS Instructor<br>Sid Rich '16<br>jcs1@rice.edu<br>(626)348-4032<br>" class="ui-jcoverflip--item" style="left:8015px; bottom: 20px;">
+		<img src="pictures/sheu.jessica.png" style="width: 10px; display: block;"></li>
+
+		<li title="Matthew Stampfl<br>EMT-Intermediate<br>InCharge Trainee<br>Special Events EMT<br>BLS Instructor<br>Jones '15<br>mjs15@rice.edu<br>(920)445-1841<br>" class="ui-jcoverflip--item" style="left:8125px; bottom: 20px;">
+		<img src="pictures/stampfl.matthew.png" style="width: 10px; display: block;"></li>
+
+		<li title="Eric Sung<br>EMT-Basic<br>Lovett '16<br>es19@rice.edu<br>(469)237-6893<br>" class="ui-jcoverflip--item" style="left:8235px; bottom: 20px;">
+		<img src="pictures/sung.eric.png" style="width: 10px; display: block;"></li>
+
+		<li title="Cara Sylvester<br>EMT-Basic<br>Duty Crew<br>AED Team<br>Special Events EMT<br>Will Rice '14<br>cns3@rice.edu<br>(210)200-9307<br>" class="ui-jcoverflip--item" style="left:8345px; bottom: 20px;">
+		<img src="pictures/sylvester.cara.png" style="width: 10px; display: block;"></li>
+
+		<li title="Nitish Thareja<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Sid Rich '14<br>nt4@rice.edu<br>(281)301-5707<br>" class="ui-jcoverflip--item" style="left:8455px; bottom: 20px;">
+		<img src="pictures/thareja.nitish.png" style="width: 10px; display: block;"></li>
+
+		<li title="Zack Timmons<br>EMT-Intermediate<br>Duty Crew<br>Special Events EMT<br>BLS Instructor<br>Lovett '15<br>jzt1@rice.edu<br>(254)224-7675<br>" class="ui-jcoverflip--item" style="left:8565px; bottom: 20px;">
+		<img src="pictures/timmons.zack.png" style="width: 10px; display: block;"></li>
+
+		<li title="Shireen Usman<br>EMT-Basic<br>Duty Crew<br>Martel '15<br>sju1@rice.edu<br>(913)575-7948<br>" class="ui-jcoverflip--item" style="left:8675px; bottom: 20px;">
+		<img src="pictures/usman.shireen.png" style="width: 10px; display: block;"></li>
+
+		<li title="Amol Utrankar<br>EMT-Intermediate<br>InCharge<br>Operations Lieutenant<br>Field Training Officer<br>Special Events EMT<br>BLS Instructor<br>Will Rice '14<br>amol@rice.edu<br>(732)379-0431<br>" class="ui-jcoverflip--item" style="left:8785px; bottom: 20px;">
+		<img src="pictures/utrankar.amol.png" style="width: 10px; display: block;"></li>
+
+		<li title="Dixita Viswanath<br>EMT-Basic<br>Duty Crew<br>Special Events EMT<br>BLS Instructor<br>Will Rice '16<br>dixita@rice.edu<br>(203)595-5620<br>" class="ui-jcoverflip--item" style="left:8895px; bottom: 20px;">
+		<img src="pictures/viswanath.dixita.png" style="width: 10px; display: block;"></li>
+
+		<li title="Linda Wang<br>EMT-Basic<br>Duty Crew<br>Will Rice '14<br>lw12@rice.edu<br>(503)560-4153<br>" class="ui-jcoverflip--item" style="left:9005px; bottom: 20px;">
+		<img src="pictures/wang.linda.png" style="width: 10px; display: block;"></li>
+
+		<li title="Samantha (Kami) Watkins<br>EMT-Basic<br>Duty Crew<br>BLS Instructor<br>Baker '15<br>smw6@rice.edu<br>(210)771-0032<br>" class="ui-jcoverflip--item" style="left:9115px; bottom: 20px;">
+		<img src="pictures/watkins.samantha (kami).png" style="width: 10px; display: block;"></li>
+
+		<li title="Alex Yang<br>EMT-Basic<br>Observer<br>Jones '14<br>amy3@rice.edu<br>(281)466-7569<br>" class="ui-jcoverflip--item" style="left:9225px; bottom: 20px;">
+		<img src="pictures/yang.alex.png" style="width: 10px; display: block;"></li>
+
+		<li title="Angela Yang<br>EMT-Basic<br>Duty Crew<br>Jones '16<br>aay1@rice.edu<br>(832)969-0536<br>" class="ui-jcoverflip--item" style="left:9335px; bottom: 20px;">
+		<img src="pictures/yang.angela.png" style="width: 10px; display: block;"></li>
+
+		<li title="Corinne Young<br>EMT-Intermediate<br>Reserve Lieutenant<br>Special Events EMT<br>Brown '12<br>cey1@rice.edu<br>(504)905-6721<br>" class="ui-jcoverflip--item" style="left:9445px; bottom: 20px;">
+		<img src="pictures/young.corinne.png" style="width: 10px; display: block;"></li>
+
+		<li title="Hashim Zaidi<br>EMT-Intermediate<br>Reserve Lieutenant<br>AHA ACLS Faculty<br>Special Events EMT<br>BLS Instructor<br>Will Rice '12<br>hashim.q.zaidi@gmail.com<br>(832)766-6972<br>" class="ui-jcoverflip--item" style="left:9555px; bottom: 20px;">
+		<img src="pictures/zaidi.hashim.png" style="width: 10px; display: block;"></li>
+
+
+
+
+
+
+
+	  
+	</ul>
+    
+    </div>
+	
+	<form id="switcher" action="index.html">
+		<input type="submit" value="Directory View">
+	</form>
+  
+</body></html>

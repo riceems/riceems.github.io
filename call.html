@@ -1,0 +1,136 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n1">Never go offline until the dispatcher does.</div>
+<div class="tooltip" id="n2">The "fourth floor of Fondren Library near call number DA89"<br>is more helpful than "Fondren Library." It is also a good idea<br>to have someone waiting outside the building to help direct<br>Rice EMS to the scene.</div>
+<div class="tooltip" id="n3">Indicate the severity of the problem. A hand bleeding from a<br>paper cut is a different scenario than a hand bleeding from a<br>gunshot wound. If the emergency is medical (nausea, chest pain,<br>dizziness), it may be helpful to give the age of the patient.</div>
+<div class="tooltip" id="n5">If there is a threat to your safety, (fire, violent person,<br>chemical spill, etc.) leave immediately. If you can safely<br>help remove the injured person from the scene, do so, but<br>your safety comes first. It is vital that you tell dispatch<br>if there is a safety threat, otherwise EMTs may be harmed.<br>Obviously, if the EMTs are injured, they can no longer<br>help the patient.</div>
+<div class="tooltip" id="n6">Rice EMTs are well-trained, and have a lot of experience<br>helping injured and sick people. They have literally saved<br>lives on numerous occasions, and are more than ready to<br>take on any situation.</div>
+<div class="tooltip" id="n7">If you or someone else on the scene has first aid training,<br>try to help the patient. Never attempt to do anything that<br>you have not been trained to do, or feel uncomfortable doing.</div>
+<div class="tooltip" id="n8">Generally, 1 Duty Crew EMT and 1 EMS InCharge will<br>respond; RUPD may also be dispatched, depending on<br>the nature of the emergency.</div>
+<div class="tooltip" id="n9">The InCharge may request additional assistance as needed.</div>
+<div class="tooltip" id="n10">For our patients' safety and well-being, Rice EMS<br>always recommends that patients seek further medical<br>attention at a hospital using ambulance transport.</div>
+<div class="tooltip" id="n13">REMS always recommends ambulance transport, as that<br>is the safest option for our patients; for minor injuries,<br>(twisted ankle, minor laceration, etc.) the patient may<br>be taken to the hospital by a friend.</div>
+<div class="tooltip" id="n14">More serious cases (or patient's request) will require<br>ambulance transport to the hospital. Dispatch will<br>contact HFD directly. RUPD will guide HFD units to<br>the appropriate location. REMS will continue to the<br>treat the patient and transfer patient care upon HFD's arrival.<br><br>REMS and RUPD offer their services free of charge, but<br>Rice has no control over costs incurred by HFD transport;<br>patients transported by HFD should expected to be billed<br>for that service (insurance should assist in the payment).<br>If you cannot pay the fee and your insurance does not cover<br>ambulance transport, HFD has a no-interest payment plan available.</div>
+<div class="tooltip" id="n15">Any competent patient has the right to make his or<br>her own medical decisions, including refusing further<br>treatment (after an assessment of the patient's<br>competency has been performed).</div>
+<div class="tooltip" id="e13">YES</div>
+<div class="tooltip" id="e14">YES</div>
+<div class="tooltip" id="e15">NO</div>
+<div class="tooltip" id="e17">NO</div>
+
+<map name="image1_1">
+  <area shape="poly" coords="364,699,442,699,442,691,364,691,364,699,364,699" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e17')"/>
+  <area shape="poly" coords="320,863,320,887,324,891,376,891,376,887,372,887,372,904,380,904,380,887,376,883,324,883,324,887,328,887,328,863,320,863,320,863" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e15')"/>
+  <area shape="poly" coords="240,863,240,887,244,887,244,883,180,883,176,887,176,904,184,904,184,887,180,887,180,891,244,891,248,887,248,863,240,863,240,863" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e14')"/>
+  <area shape="poly" coords="280,735,280,759,280,776,288,776,288,759,288,735,280,735,280,735" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e13')"/>
+  <area shape="rect" coords="448,655,608,735" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n15')"/>
+  <area shape="rect" coords="296,911,456,991" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n14')"/>
+  <area shape="rect" coords="80,911,280,991" href="http://rems.rice.edu/resources/" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n13')"/>
+  <area shape="rect" coords="184,551,384,631" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n10')"/>
+  <area shape="rect" coords="408,551,608,631" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n9')"/>
+  <area shape="rect" coords="512,143,672,223" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n8')"/>
+  <area shape="rect" coords="224,399,384,479" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n7')"/>
+  <area shape="rect" coords="40,399,200,479" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n6')"/>
+  <area shape="rect" coords="408,399,568,479" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n5')"/>
+  <area shape="rect" coords="144,143,304,223" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n3')"/>
+  <area shape="rect" coords="328,143,488,223" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n2')"/>
+  <area shape="rect" coords="328,15,488,95" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n1')"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="call1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+</body>
+</html>

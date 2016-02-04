@@ -1,0 +1,8 @@
+<option value = "obs">Observers</option>
+<option value = "dc">Duty Crew</option>
+<option value = "se">Special Event EMTs</option>
+<option value = "bls">BLS Instructors</option>
+<option value = "ict">InCharge Trainees</option>
+<option value = "ic">InCharges</option>
+<option value = "direc">EMS Director</option>
+<option value = "medcom">Medical Command</option>

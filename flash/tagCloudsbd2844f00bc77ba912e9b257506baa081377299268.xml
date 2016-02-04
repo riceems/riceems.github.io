@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagClouds>
+  <einstellungen>
+    <allgemein modus="globus" breite="673" hoehe="250" hintergrundfarbe="0xFFFFFF" rahmenfarbe="0xFFFFFF"/>
+    <wolke prozentsatz_vertikal=""/>
+    <globus radius="150" maximale_Drehgeschwindigkeit="1.5"/>
+    <fliegen geschwindigkeit_aktiv="" geschwindigkeit_passiv="" richtung=""/>
+    <schrift schriftart="Arial" kleinste_Schriftgr="12" groesste_Schriftgr="22" link_dekoration="nounderline"/>
+    <farbe wert="0xC7A975"/>
+    <farbe wert="0x3149A8"/>
+    <farbe wert="0xA11717"/>
+    <farbe wert="0xAA99B0"/>
+  </einstellungen>
+  <tag linkURL="http://rems.rice.edu/emergency" prioritaet="2" text="Emergency Information" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/" prioritaet="2" text="Home" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/history/" prioritaet="7" text="History" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/timeline/" prioritaet="4" text="Timeline" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/joining-rems/" prioritaet="4" text="Join REMS" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/helpful-links/" prioritaet="2" text="Helpful Links" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/command/" prioritaet="4" text="Chain of Command" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/icteam/" prioritaet="2" text="InCharge Team" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/medcommand/" prioritaet="7" text="Medical Command" target="_self"/>
+  <tag linkURL="http://rems.blogs.rice.edu/team/" prioritaet="7" text="REMS Members" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/contact-us/" prioritaet="8" text="Contact Us" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/services/" prioritaet="3" text="Our Services" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/pad-sites/" prioritaet="1" text="PAD Sites" target="_self"/>
+  <tag linkURL="http://rems.blogs.rice.edu/aed/" prioritaet="7" text="AED Checks" target="_self"/>
+  <tag linkURL="http://rems.blogs.rice.edu/locations/" prioritaet="3" text="Important Locations" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/resources/" prioritaet="2" text="Resources" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/cpr-fa/" prioritaet="9" text="CPR and First Aid" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/emt-courses/" prioritaet="3" text="Rice EMT Courses" target="_self"/>
+  <tag linkURL="http://rems.rice.edu/outside-courses/" prioritaet="3" text="Outside EMT Courses" target="_self"/>
+  <tag linkURL="http://rems.blogs.rice.edu/article/" prioritaet="9" text="Article of the Week" target="_self"/>
+  <tag linkURL="http://www.facebook.com/#!/riceems" prioritaet="8" text="Facebook" target="_self"/>
+  <tag linkURL="http://www.linkedin.com/groups?home=&amp;gid=5103151&amp;trk=anet_ug_hm" prioritaet="8" text="LinkedIn" target="_self"/>
+  <tag linkURL="https://owlspace-ccm.rice.edu/portal/site/rems" prioritaet="7" text="OwlSpace" target="_self"/>
+</tagClouds>

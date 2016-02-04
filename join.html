@@ -1,0 +1,146 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n2">Have you passed the<br>National Registry test?</div>
+<div class="tooltip" id="n3">Click for more information</div>
+<div class="tooltip" id="n4">Click for more information</div>
+<div class="tooltip" id="n5">Click for more information</div>
+<div class="tooltip" id="n6">Are you certified by the Texas<br>Department of State Health Services?</div>
+<div class="tooltip" id="n7">Click for more information</div>
+<div class="tooltip" id="n8">Click for more information</div>
+<div class="tooltip" id="n9">Email remsfto@gmail.com</div>
+<div class="tooltip" id="n10">Click for the application</div>
+<div class="tooltip" id="n11">Click for additional required material</div>
+<div class="tooltip" id="n12">You will also need to complete at least 1 patient chart</div>
+<div class="tooltip" id="n15">You are now a member of REMS!</div>
+<div class="tooltip" id="e0">NO</div>
+<div class="tooltip" id="e1">YES</div>
+<div class="tooltip" id="e4">NO</div>
+<div class="tooltip" id="e5">YES</div>
+<div class="tooltip" id="e6">NO</div>
+<div class="tooltip" id="e8">NO</div>
+<div class="tooltip" id="e9">YES</div>
+<div class="tooltip" id="e10">YES</div>
+<div class="tooltip" id="e12">UNSURE</div>
+
+<map name="image1_1">
+  <area shape="poly" coords="564,170,564,316,567,316,567,313,525,313,525,319,567,319,570,316,570,170,564,170,564,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e12')"/>
+  <area shape="poly" coords="579,143,621,143,621,140,618,140,618,425,621,425,621,422,584,422,584,428,621,428,624,425,624,140,621,137,579,137,579,143,579,143" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e10')"/>
+  <area shape="poly" coords="411,143,454,143,454,137,411,137,411,143,411,143" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e9')"/>
+  <area shape="poly" coords="483,170,483,200,489,200,489,170,483,170,483,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e8')"/>
+  <area shape="poly" coords="308,170,308,319,311,319,311,316,225,316,225,322,311,322,314,319,314,170,308,170,308,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e6')"/>
+  <area shape="poly" coords="210,170,210,200,216,200,216,170,210,170,210,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e5')"/>
+  <area shape="poly" coords="123,137,75,137,72,140,72,199,72,200,78,200,78,199,78,140,75,140,75,143,123,143,123,137,123,137" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e4')"/>
+  <area shape="poly" coords="327,48,351,48,351,45,348,45,348,105,354,105,354,45,351,42,327,42,327,48,327,48" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e1')"/>
+  <area shape="poly" coords="207,42,183,42,180,45,180,105,186,105,186,45,183,45,183,48,207,48,207,42,207,42" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('e0')"/>
+  <area shape="rect" coords="291,577,411,637" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n15')"/>
+  <area shape="rect" coords="291,486,411,546" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n12')"/>
+  <area shape="rect" coords="123,395,243,455" href="http://rems.blogs.rice.edu/files/2013/07/Paperwork_packet_716.pdf" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n11')"/>
+  <area shape="rect" coords="291,395,411,455" href="http://rems.blogs.rice.edu/files/2013/07/Application_packet_716.pdf" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n10')"/>
+  <area shape="rect" coords="459,395,579,455" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n9')"/>
+  <area shape="rect" coords="400,300,520,360" href="https://vo.ras.dshs.state.tx.us/datamart/selSearchTypeTXRAS.do?from=loginPage" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n8')"/>
+  <area shape="rect" coords="400,205,520,265" href="http://www.dshs.state.tx.us/emstraumasystems/formsresources.shtm" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n7')"/>
+  <area shape="rect" coords="459,110,579,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n6')"/>
+  <area shape="rect" coords="100,300,220,360" href="http://www.nremt.org/" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n5')"/>
+  <area shape="rect" coords="153,205,273,265" href="http://rems.rice.edu/emt-courses/" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n4')"/>
+  <area shape="rect" coords="15,205,135,265" href="http://rems.rice.edu/outside-courses/" alt="" target="_blank" onmouseout="hideTooltip()" onmouseover="showTooltip('n3')"/>
+  <area shape="rect" coords="291,110,411,170" alt="" onmouseout="hideTooltip()" onmouseover="showTooltip('n2')"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="join1_1.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+  <head>
+    <title>REMS Directory</title>
+    <meta charset = "UTF-8" />
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+	
+  </head>
+  <body>
+    <h1>Rice EMS Picture Directory</h1>
+    <form>
+       <fieldset>
+          <legend>Search Database</legend>
+          <p>
+             <label>Search by category:</label>
+             <select id = "initList1">
+			   <option selected value="base">Select a category</option>
+               <option value = "all">All Members</option>
+               <option value = "alumni">Alumni</option>
+               <option value = "colleges">Colleges</option>
+               <option value = "certs">Certification</option>
+			   <option value = "duty">Duty</option>
+             </select>
+			 <select id = "initList2">
+             </select>
+          </p>
+       </fieldset>
+    </form>
+  </body>
+  <script>
+		$($(function() {
+		
+			$("#initList1").bind(function() {
+				confirm("Something clicked");
+				$("#initList2").load("textdata/" + $(this).val() + ".txt");
+			}););
+	</script>
+</html>

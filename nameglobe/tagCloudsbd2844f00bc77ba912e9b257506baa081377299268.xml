@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tagClouds>
+  <einstellungen>
+    <allgemein modus="globus" breite="673" hoehe="673" hintergrundfarbe="0xFFFFFF" rahmenfarbe="0xFFFFFF"/>
+    <wolke prozentsatz_vertikal=""/>
+    <globus radius="500" maximale_Drehgeschwindigkeit="1.5"/>
+    <fliegen geschwindigkeit_aktiv="" geschwindigkeit_passiv="" richtung=""/>
+    <schrift schriftart="Arial" kleinste_Schriftgr="24" groesste_Schriftgr="22" link_dekoration="nounderline"/>
+    <farbe wert="0xC7A975"/>
+    <farbe wert="0x3149A8"/>
+    <farbe wert="0xA11717"/>
+    <farbe wert="0xAA99B0"/>
+  </einstellungen>
+  <tag text="Nitin Agrawal"/>
+  <tag text="Mollie Ahn"/>
+  <tag text="Gregory Aird"/>
+  <tag text="Ibrahim Akbar"/>
+  <tag text="Nathan Allen, MD"/>
+  <tag text="Nicholas Anhold"/>
+  <tag text="Lisa Basgall"/>
+  <tag text="Zaid Bilgrami"/>
+  <tag text="Elzia Broussard"/>
+  <tag text="Alexandra Bulga"/>
+  <tag text="Ko Choi"/>
+  <tag text="Cameron Decker, MD"/>
+  <tag text="William Dillon"/>
+  <tag text="Jennifer Ding"/>
+  <tag text="Danny Dos Santos"/>
+  <tag text="Andrew Emerald"/>
+  <tag text="Mark Escott, MD"/>
+  <tag text="Ian Feldman"/>
+  <tag text="Angela Fisher, MD"/>
+  <tag text="Madeline Flores"/>
+  <tag text="Louis Fornage"/>
+  <tag text="Nicholas George-Jones"/>
+  <tag text="Lauren Gernon"/>
+  <tag text="Michael Gonzalez, MD"/>
+  <tag text="Nadia Haj-Ismail"/>
+  <tag text="Kayla Hatchell"/>
+  <tag text="Trent Herrod"/>
+  <tag text="Alex Hilser"/>
+  <tag text="Ben Huang"/>
+  <tag text="Michael Ip"/>
+  <tag text="Matthew Janousek"/>
+  <tag text="Shane Jenks, MD"/>
+  <tag text="Sirus Jesudasen"/>
+  <tag text="Ashley Joseph"/>
+  <tag text="Iman Kassir"/>
+  <tag text="Collette Kendrick"/>
+  <tag text="Radina Khalid"/>
+  <tag text="Wilhelm Kienast"/>
+  <tag text="Vinay Kotamarti"/>
+  <tag text="Christopher Leba"/>
+  <tag text="Jacinta Leyden"/>
+  <tag text="Karen Li"/>
+  <tag text="Emily Liljestrand"/>
+  <tag text="Rafael Lima"/>
+  <tag text="Michelle Lin"/>
+  <tag text="Teresa Lin"/>
+  <tag text="Jonathan Liu"/>
+  <tag text="Carissa Livingston"/>
+  <tag text="Melissa Martinez"/>
+  <tag text="Oscar Martinez"/>
+  <tag text="Marina Masciale"/>
+  <tag text="Patrick McCarthy"/>
+  <tag text="Faroukh Mehkri"/>
+  <tag text="Aydan Mehralizade"/>
+  <tag text="Eva Ng"/>
+  <tag text="Amir Nikahd"/>
+  <tag text="Sahar Noorani"/>
+  <tag text="Ndidi Okeke"/>
+  <tag text="Michael Pandya"/>
+  <tag text="Ryan Pappal"/>
+  <tag text="Sahil Parikh"/>
+  <tag text="Joshua Parramore"/>
+  <tag text="Jesse Passman"/>
+  <tag text="Sajani Patel"/>
+  <tag text="Warren Phillips"/>
+  <tag text="Tyson Pillow, MD"/>
+  <tag text="Ronnie Ren"/>
+  <tag text="Muhammad Shamim"/>
+  <tag text="Jessica Sheu"/>
+  <tag text="Ben Simpson"/>
+  <tag text="Matthew Stampfl"/>
+  <tag text="Cara Sylvester"/>
+  <tag text="Nitish Thareja"/>
+  <tag text="Zack Timmons"/>
+  <tag text="Shireen Usman"/>
+  <tag text="Amol Utrankar"/>
+  <tag text="Dixita Viswanath"/>
+  <tag text="Linda Wang"/>
+  <tag text="Kami Watkins"/>
+  <tag text="Anne Wei"/>
+  <tag text="Alex Yang"/>
+  <tag text="Angela Yang"/>
+  <tag text="Felix Yang"/>
+  <tag text="Corinne Young"/>
+  <tag text="Hashim Zaidi"/>
+</tagClouds>
